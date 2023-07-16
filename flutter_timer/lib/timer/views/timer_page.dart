@@ -117,7 +117,7 @@ class TimerPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => TimerBloc(ticker: Tickers()),
+      create: (_) => TimerBloc(ticker: const Tickers()),
       child: const TimerView(),
     );
   }
@@ -129,13 +129,13 @@ class TimerView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Flutter Timer')),
-      body: Stack(
+      body: const Stack(
         children: [
-          const Background(),
+          Background(),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: const <Widget>[
+            children: <Widget>[
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 100.0),
                 child: Center(child: TimerText()),
@@ -154,11 +154,12 @@ class TimerText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final duration = context.select((TimerBloc bloc) => bloc.state.duration);
+    final hourStr = (duration / (60 * 60)).floor().toString().padLeft(2, '0');
     final minutesStr = ((duration / 60) % 60).floor().toString().padLeft(2, '0');
     final secondsStr = (duration % 60).floor().toString().padLeft(2, '0');
     return Text(
-      '$minutesStr:$secondsStr',
-      style: Theme.of(context).textTheme.headline1,
+      '$hourStr:$minutesStr:$secondsStr',
+      style: Theme.of(context).textTheme.displayMedium,
     );
   }
 }
