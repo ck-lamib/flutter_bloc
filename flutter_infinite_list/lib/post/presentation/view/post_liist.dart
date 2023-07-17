@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_infinite_list/post/widget/bottom_loader.dart';
-import 'package:flutter_infinite_list/post/widget/post_liist_item.dart';
 
 import '../bloc/post_bloc.dart';
+import '../widget/bottom_loader.dart';
+import '../widget/post_liist_item.dart';
 
 class PostList extends StatefulWidget {
   const PostList({super.key});

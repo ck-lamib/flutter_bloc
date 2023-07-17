@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_infinite_list/post/view/post_page.dart';
+import 'package:flutter_infinite_list/post/presentation/view/post_page.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

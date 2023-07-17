@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_infinite_list/post/bloc/post_bloc.dart';
-import 'package:flutter_infinite_list/post/view/post_liist.dart';
+import 'package:flutter_infinite_list/post/presentation/view/post_liist.dart';
+
+import '../bloc/post_bloc.dart';
 
 class PostPage extends StatelessWidget {
   const PostPage({super.key});
